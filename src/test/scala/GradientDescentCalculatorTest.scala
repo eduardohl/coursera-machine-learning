@@ -6,7 +6,7 @@ import scala.io.Source
  */
 class GradientDescentCalculatorTest extends FlatSpec with Matchers {
 
-  "A GradientDescentCalculator" should "converge to t0 ~ 27 and t1 ~ 100 " in {
+  "A GradientDescentCalculator for data.csv dataset" should "converge to t0 ~ 27 and t1 ~ 100 " in {
     val samples = Source.fromURL(getClass.getResource("/data.csv")).getLines().toList.map(x => Sample.fromCsvString(x))
     val costFunction = GradientDescentCalculator().forLinearRegression(1486d, 8765d, samples)
     math round(costFunction t0) should be (27)

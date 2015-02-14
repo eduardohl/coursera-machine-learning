@@ -1,7 +1,6 @@
-/**
- * Created by eduardohl on 1/22/2015.
- */
-class GradientDescentCalculator {
+package singlevar
+
+class GradientDescentCalculatorSingleVar {
 
   //Alpha factor is the learning rate, using lower values makes the algorithm faster, but might not converge
   val AlphaFactor = 1e-3
@@ -9,7 +8,7 @@ class GradientDescentCalculator {
   //This constant might be used to allow for a softer convergence criteria
   val StopConditionFactor = 1e-15
 
-  def forLinearRegression(t0suggestion: Double, t1suggestion: Double, samples: List[Sample]): CostFunction = {
+  def forLinearRegression(t0suggestion: Double, t1suggestion: Double, samples: List[Sample]): CostFunctionSingleVar = {
     var t0 = 0d
     var t1 = 0d
     var nextt0 = t0suggestion
@@ -17,7 +16,7 @@ class GradientDescentCalculator {
 
     var iterationCounter = 1
     while(stopCondition(t0, t1, nextt0, nextt1)) {
-      println(s"Iteration: $iterationCounter t0: $t0 and t1: $t1")
+      //println(s"Iteration: $iterationCounter t0: $t0 and t1: $t1")
       iterationCounter += 1
       t0 = nextt0
       t1 = nextt1
@@ -25,7 +24,7 @@ class GradientDescentCalculator {
       nextt1 = calculateT1(t0, t1, samples)
     }
 
-    CostFunction(t0, t1)
+    CostFunctionSingleVar(t0, t1)
   }
 
   /**
@@ -63,6 +62,6 @@ class GradientDescentCalculator {
   }
 }
 
-object GradientDescentCalculator {
-  def apply() = new GradientDescentCalculator()
+object GradientDescentCalculatorSingleVar {
+  def apply() = new GradientDescentCalculatorSingleVar()
 }

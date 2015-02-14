@@ -6,4 +6,6 @@ This repo contains my implementation in Scala for some of the algorithms propose
 
 Algorithms implemented
 
-- Linear regression with one variable using Gradient Descent - check it in gradientdescent.singlevar.GradientDescentCalculatorTest
+- Linear regression with one variable using Gradient Descent - check it in singlevar/GradientDescentCalculatorSingleVarTest.scala
+- Linear regression with multiple variables using Gradient Descent - check it in gradientdescent/GradientDescentCalculator
+- Linear regression with multiple variables using Normal Equation - check it in normalequation/NormalEquationCalculator
